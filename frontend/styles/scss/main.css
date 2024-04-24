@@ -1,0 +1,206 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Open Sans", serifsubmit;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: gray
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: green
+  text-align  : center;
+  margin-bottom : 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+label {
+  color: #000000;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #FC8019;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover.log{
+  background-color: rgb(213, 114, 79);
+}
+
+button:hover{
+  background-color: darkcyan;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: rgb(11, 69, 92);
+  color: white;
+  padding: 10px 0;
+}
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  background-color: rgb(99, 176, 150);
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.featured {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.featured h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.restaurant {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+.restaurant img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+.restaurant h3 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+.restaurant p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+footer {
+  background-color: rgb(99, 176, 150);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}/*# sourceMappingURL=main.css.map */
+section.about{
+  padding: 100px;
+  max-width: max-content;
+}
+h2{
+  text-align: center;}
+ body.main{
+  background-position:center;
+  background-size: cover;
+ }
+ .cover{
+   color: white;
+ }
+ .e{
+  color: white;
+ }
+ .p{
+  color: white;
+ }
+ .log{
+  background-color: burlywood ;
+ }
+ .donot{
+  color: white;
+ }
+ .r{
+  color: white;
+ }
+ .u{
+  color: white;
+ }
+ .em{
+  color: white;
+ }
+ .pass{
+  color: white;
+ }
+ .cp{
+  color: white;
+ }
+ .reg{
+  color: white;
+ }
+.vege{
+  background-position:center;
+  background-size: cover;
+}
+.Register{
+  color: white;
+}
+.al{
+  color: white;
+}
+.logged{
+  color: white;
+}
