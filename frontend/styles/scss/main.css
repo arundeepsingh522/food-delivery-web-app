@@ -204,3 +204,19 @@ h2{
 .logged{
   color: white;
 }
+#errorDiv{
+  text-align: center;
+  display: inline-block;
+}
+
+#errormessage{
+  color: red;
+  margin-top: 0;
+  background-color: #ccc;
+  display: inline;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+
+}
