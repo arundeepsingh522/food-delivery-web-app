@@ -13,7 +13,6 @@ usernameInput.addEventListener("input", (event) => {
     clearError();
   }
 });
-
 passwordInput.addEventListener("input", (event) => {
   const password = event.target.value;
   if (!isValidPassword(password)) {
@@ -40,9 +39,7 @@ document.querySelector("#submit-signup").addEventListener("click", () => {
       alert(result);
     }else{
 
-      //user succesfully
-      const user = {username,email}
-      setCurrentUser(user);
+
       window.location.href='login.html'
     }
     
@@ -68,15 +65,7 @@ function validateInputs(username, email, password, confirmPassword) {
   return errorMessage;
 }
 
-function isValidEmail(email) {
-  const emailRegex = /^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-  return emailRegex.test(email);
-}
 
-function isValidPassword(password) {
-  const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
-  return pattern.test(password);
-}
 
 function displayError(message) {
   errorMessage.innerText = message;

@@ -5,17 +5,28 @@ document.querySelector('#submit-login').addEventListener('click',(event)=>
   const password = document.getElementById("password").value;
   if (!email) {
     errorMessage = "Email is required";
-  } else if (!password) {
-    errorMessage = "Password is required";
-  }else if (!isValidEmail(email))
+  } else if (!isValidEmail(email))
   {
     errorMessage="Invalid Email or Password";
+  }else if (!password) {
+    errorMessage = "Password is required";
   }
   if(errorMessage)
   {
     alert(errorMessage);
   }else{
     //check and match password from database
+    const result=loginUser(email,password);
+    if(result)
+    {
+      //go to the home page
+      window.location.href='home2.html'
+
+    }else{
+      alert("Invalid Email or Password");
+    }
+
+    console.log('result1',result);
   }
 }
 );
