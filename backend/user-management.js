@@ -86,3 +86,20 @@ function getUsers()
   }
   
 }
+
+function updatePassword(email,password){
+  const users=getUsers();
+  if(users)
+  {
+    const userIndex = users.findIndex(user=>user.email===email);
+    if(userIndex!=-1)
+    {
+      console.log('user index: '+userIndex);
+      users[userIndex].password=password;
+      localStorage.setItem('users',JSON.stringify(users));
+      return true;
+  }
+  
+   
+  }
+}

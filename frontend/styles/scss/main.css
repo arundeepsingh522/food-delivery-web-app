@@ -4,22 +4,22 @@ body {
   padding: 0;
   background-color: rgb(255, 255, 255);
   box-sizing: border-box;
+  opacity: 0;
 }
 
 .container {
   max-width: 400px;
   margin: 100px auto;
-  background-color: rgba(128, 128, 128, .4);
+  background-color: rgba(128, 128, 128, 0.4);
   padding: 50px;
   border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
-  
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
   color: green;
-  text-align  : center;
-  margin-bottom : 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 form {
@@ -41,9 +41,9 @@ label {
   font-weight: bold;
 }
 
-input[type=text],
-input[type=email],
-input[type=password] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -51,7 +51,7 @@ input[type=password] {
 }
 
 button {
-  background-color: #FC8019;
+  background-color: #fc8019;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -60,11 +60,11 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover.log{
+button:hover.log {
   background-color: rgb(213, 114, 79);
 }
 
-button:hover{
+button:hover {
   background-color: darkcyan;
 }
 
@@ -152,70 +152,70 @@ footer {
   color: white;
   text-align: center;
   padding: 20px 0;
-}/*# sourceMappingURL=main.css.map */
-section.about{
+} /*# sourceMappingURL=main.css.map */
+section.about {
   padding: 100px;
   max-width: max-content;
 }
-h2{
-  text-align: center;}
- body.main{
-  background-position:center;
-  background-size: cover;
-  
- }
- .cover{
-   color: white;
- }
- .e{
-  color: white;
- }
- .p{
-  color: white;
- }
- .log{
-  background-color: burlywood ;
- }
- .donot{
-  color: white;
- }
- .r{
-  color: white;
- }
- .u{
-  color: white;
- }
- .em{
-  color: white;
- }
- .pass{
-  color: white;
- }
- .cp{
-  color: white;
- }
- .reg{
-  color: white;
- }
-.vege{
-  background-position:center;
+h2 {
+  text-align: center;
+}
+body.main {
+  background-position: center;
   background-size: cover;
 }
-.Register{
+.cover {
   color: white;
 }
-.al{
+.e {
   color: white;
 }
-.logged{
+.p {
   color: white;
 }
-#errorDiv{
+.log {
+  background-color: burlywood;
+}
+.donot {
+  color: white;
+}
+.r {
+  color: white;
+}
+.u {
+  color: white;
+}
+.em {
+  color: white;
+}
+.pass {
+  color: white;
+}
+.cp {
+  color: white;
+}
+.reg {
+  color: white;
+}
+.vege {
+  background-position: center;
+  background-size: cover;
+}
+.Register {
+  color: white;
+}
+.al {
+  color: white;
+}
+.logged {
+  color: white;
+}
+#errorDiv {
   text-align: center;
   display: inline-block;
 }
 
-#errormessage{
+#errormessage {
   color: red;
   margin-top: 0;
   background-color: #ccc;
@@ -224,50 +224,58 @@ h2{
   display: flex;
   justify-content: center;
   padding: 12px 0;
-
 }
 
-#about-div{
+#about-div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-}.toast {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
+}
+.toastMessage {
+  display: none;
   position: fixed;
+  top: 50%;
   left: 50%;
-  bottom: 30px;
-  z-index: 1000; /* Set a higher z-index value */
+  transform: translate(-50%, -50%);
+  background-color: darkcyan;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
 }
 
-
-#forgot-password{
+#forgot-password {
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
   color: white;
-  
 }
-h4{
+h4 {
   color: white;
   text-align: center;
 }
-#div-password{
+#div-password {
   margin-bottom: 0px;
   visibility: hidden;
   height: 0px;
   width: 0px;
-  
 }
-#div-email{
+#div-email {
+}
 
-  
 
+.custom-swal-size .swal2-popup {
+  width: 250px !important; /* Adjust width as needed */
+}
+
+.swal-txt{
+  color: white;
+}
+
+.custom-swal-confirm {
+  font-size: 20px; /* Adjust font size as needed */
+  padding: 15px 30px;
+  width: 200px; /* Adjust padding as needed */
 }

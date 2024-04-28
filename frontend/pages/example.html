@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stacking Divs Example</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+    /* CSS to style the divs */
+.box {
+    width: 200px;
+    height: 100px;
+    margin: 10px; /* Add margin between divs for spacing */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    position: absolute; /* Set position to absolute for positioning */
+}
+.container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    flex-direction: row;
+}
+
+#box1 {
+    top: 50px;
+    left: 50px;
+    z-index: 3; /* Higher z-index */
+    background-color: violet;
+}
+
+#box2 {
+    top: 100px;
+    left: 100px;
+    z-index: 2; /* Middle z-index */
+    background-color: yellow;
+}
+
+#box3 {
+    top: 150px;
+    left: 150px;
+    z-index: 1; /* Lower z-index */
+    background-color: red;
+}
+
+</style>
+</head>
+<body>
+    <!-- HTML to create stacked divs -->
+    <div class="container">
+        <div class="box" id="box1">Box 1</div>
+        <div class="box" id="box2">Box 2</div>
+        <div class="box" id="box3">Box 3</div>
+    </div>
+   
+</body>
+</html>

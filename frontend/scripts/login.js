@@ -1,3 +1,4 @@
+
 document.querySelector('#submit-login').addEventListener('click',(event)=>
 {
   let errorMessage="";
@@ -20,7 +21,10 @@ document.querySelector('#submit-login').addEventListener('click',(event)=>
     if(result)
     {
       //go to the home page
-      window.location.href='home2.html'
+      showToast("Login successful!");
+  navigateToPage("home2.html");
+
+    
 
     }else{
       alert("Invalid Email or Password");

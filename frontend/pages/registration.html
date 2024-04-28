@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
     <link rel="stylesheet" href="../styles/scss/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
   </head>
   <body background="../images/veges.jpg" class="vege">
     <div class="container">
@@ -17,6 +19,7 @@
             id="username"
             name="username"
             placeholder="Enter your username"
+            value="test1"
           />
         </div>
         <div class="form-group">
@@ -26,9 +29,9 @@
             id="email"
             name="email"
             placeholder="Enter your email"
+            value="test@gmail.com"
           />
         </div>
-        <div id="toast" class="toast">s</div>
         <div class="form-group">
           <label for="password" class="pass">Password</label>
           <input
@@ -36,6 +39,7 @@
             id="password"
             name="password"
             placeholder="Enter your password"
+            value="aA!12345"
           />
         </div>
         <div class="form-group">
@@ -45,18 +49,20 @@
             id="confirm-password"
             name="confirm-password"
             placeholder="Confirm password"
+            value="aA!12345"
           />
         </div>
         <div id="errorDiv">
           <p id="errormessage"></p>
         </div>
-
         <button type="button" class="reg" id="submit-signup">Register</button>
       </form>
       <p class="al">
         Already have an account? <a href="login.html" class="logged">Login</a>
       </p>
     </div>
+    <div id="toastMessage" class="toastMessage"></div>
+    
     <script src="../scripts/utils.js"></script>
     <script src="../../backend/user-management.js"></script>
     <script src="../scripts/registration.js"></script>

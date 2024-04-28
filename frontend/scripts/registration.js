@@ -1,3 +1,4 @@
+
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
 const emailInput = document.getElementById("email");
@@ -16,7 +17,9 @@ usernameInput.addEventListener("input", (event) => {
 passwordInput.addEventListener("input", (event) => {
   const password = event.target.value;
   if (!isValidPassword(password)) {
-    displayError("Password must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 8 characters long.");
+    displayError(
+      "Password must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 8 characters long."
+    );
   } else {
     clearError();
   }
@@ -32,17 +35,25 @@ document.querySelector("#submit-signup").addEventListener("click", () => {
 
   let errorMessage = validateInputs(username, email, password, confirmPassword);
   if (errorMessage) {
-    alert(errorMessage);
-  } else {
-    const result= saveUser(username, email, password);
-    if(result){
-      alert(result);
-    }else{
-
-
-      window.location.href='login.html'
-    }
+    showCustomizedAlert(errorMessage);
+    //alert(errorMessage);
+    /*Swal.fire({
+      title: 'Error!',
+      text: errorMessage,
+      icon: 'error',
+      confirmButtonText: 'OK',
+      confirmButtonColor: '#008B8B'
+    })*/
     
+  } else {
+    const result = saveUser(username, email, password);
+    if (result) {
+      alert(result);
+    } else {
+      //window.location.href='login.html'
+      showToast("Sign up successful!");
+      navigateToPage("login.html");
+    }
   }
 });
 function validateInputs(username, email, password, confirmPassword) {
@@ -56,7 +67,8 @@ function validateInputs(username, email, password, confirmPassword) {
   } else if (!password) {
     errorMessage = "Password is required";
   } else if (!isValidPassword(password)) {
-    errorMessage = "Invalid password. Password must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 8 characters long.";
+    errorMessage =
+      "Invalid password. Password must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 8 characters long.";
   } else if (!confirmPassword) {
     errorMessage = "Confirm password is required";
   } else if (password !== confirmPassword) {
@@ -64,8 +76,6 @@ function validateInputs(username, email, password, confirmPassword) {
   }
   return errorMessage;
 }
-
-
 
 function displayError(message) {
   errorMessage.innerText = message;
