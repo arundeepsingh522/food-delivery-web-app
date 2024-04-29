@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="../styles/scss/main.css">
-</head>
-<body background="../images/veges.jpg" class="main">
+    <link rel="stylesheet" href="../styles/scss/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body background="../images/veges.jpg" class="main">
     <div class="container">
-        <div class="form">
-
-            <h2 class="cover">Login</h2>
-            <form>
-                <div class="form-group">
-                    <label for="email" class="e" >Email</label>
-                    <input type="text" id="email" name="email" placeholder="Enter your email">
-                </div>
-                <div class="form-group1">
-                    <label for="password" class="p">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password">
-                </div>
-                <a id="forgot-password" href="forgot-password.html">Forgot Password</a>
-                <button id="submit-login" type="button" class="log">Login</button>
-            </form>
-            <p class="donot">Dont't have an account? <a href="registration.html" class="r">Register</a></p>
-        </div>
-        </div>
-        <div id="toastMessage" class="toastMessage"></div>
-        <script src="../scripts/utils.js"></script>
-        <script src="../../backend/user-management.js"></script>
+      <div class="form">
+        <h2 class="cover">Login</h2>
+        <form>
+          <div class="form-group">
+            <label for="email" class="e">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="form-group1">
+            <label for="password" class="p">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <a id="forgot-password" href="forgot-password.html"
+            >Forgot Password</a
+          >
+          <button id="submit-login" type="button" class="log">Login</button>
+        </form>
+        <p class="donot">
+          Dont't have an account?
+          <a href="registration.html" class="r">Register</a>
+        </p>
+      </div>
+    </div>
+    <div id="toastMessage" class="toastMessage"></div>
+    <script src="../scripts/utils.js"></script>
+    <script src="../../backend/user-management.js"></script>
     <script src="../scripts/login.js"></script>
-</body>
+  </body>
 </html>

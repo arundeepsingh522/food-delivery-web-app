@@ -5,6 +5,7 @@ function isValidEmail(email) {
   
   function isValidPassword(password) {
     const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
+    
     return pattern.test(password);
   }
 
@@ -60,9 +61,12 @@ function showCustomizedAlert(errorMessage) {
       confirmButtonColor: '#008B8B',
       background: '#FFFFFF',
       width:'300px',
-      height:'100px',
+      padding:'10px',
        customClass: {
-            confirmButton: 'custom-swal-confirm' // Apply custom class to the confirm button
+            confirmButton: 'custom-swal-confirm', // Apply custom class to the confirm button
+            icon:'icon-swal',
+            title:'title-swal',
+            text:'text-swal'
         }
   });
 }

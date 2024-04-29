@@ -1,4 +1,3 @@
-
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
 const emailInput = document.getElementById("email");
@@ -36,19 +35,10 @@ document.querySelector("#submit-signup").addEventListener("click", () => {
   let errorMessage = validateInputs(username, email, password, confirmPassword);
   if (errorMessage) {
     showCustomizedAlert(errorMessage);
-    //alert(errorMessage);
-    /*Swal.fire({
-      title: 'Error!',
-      text: errorMessage,
-      icon: 'error',
-      confirmButtonText: 'OK',
-      confirmButtonColor: '#008B8B'
-    })*/
-    
   } else {
     const result = saveUser(username, email, password);
     if (result) {
-      alert(result);
+      showCustomizedAlert(result);
     } else {
       //window.location.href='login.html'
       showToast("Sign up successful!");

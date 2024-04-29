@@ -21,3 +21,12 @@ let result1=users.find((user)=>{
 console.log('rslt',result1);
 const s = JSON.parse(null);
 console.log('s',s);
+
+
+
+
+const bt = document.getElementById('orderClick');
+bt.addEventListener( 'click',(event)=>{
+    
+    addToCart(100);
+});
