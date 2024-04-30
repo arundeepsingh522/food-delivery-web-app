@@ -1,7 +1,6 @@
 // Dummy array of restaurants
 {const restaurants = [
-    
-    {
+     {
         id: 1,
         picSrc: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/iicxz127dequaxndmzho',
         name: 'Prantha King',
@@ -27,7 +26,22 @@
         rating: '4',
         deliveryTime: '55-60 mins',
         type: 'North Indian, Chinese',
-        location: 'Samrala Chowk'
+        location: 'Samrala Chowk',
+        dishes:[
+            {
+                name: "Noodles Burger",
+                picSrc: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/028a738cb13f2a20b34db778595f0814",
+                description: 'Savor the ultimate fusion of flavors and textures with our tantalizing Noodles Burger.',
+                ratingReviews:'3.8 (20)',
+                price:36
+            },
+            {
+
+
+            }
+
+
+        ]
     },
     {
         id: 3,
@@ -35,7 +49,7 @@
         name: "Captain Sam's Pizza",
         rating: '4.1',
         deliveryTime: '50-55 mins',
-        type: 'Pizzas, Desserts, Beverages, Pastas, Fast Food, Snacks, Italian',
+        type: 'Pizzas, Desserts, Beverages..',
         location: 'Sector 32'
     },
     {
@@ -45,7 +59,8 @@
         rating: '3.8',
         deliveryTime: '45-50 mins',
         type: 'Barista Coffee',
-        location: 'Civil Lines'
+        location: 'Civil Lines',
+        dishes:''
     },
     {
         id: 5,
@@ -74,10 +89,10 @@
         type: 'Sweets, Snacks',
         location: 'Sector 32'
     },
+    
 ];
 // Convert the array to JSON string
 const restaurantsJSON = JSON.stringify(restaurants);
-
 // Store in local storage
 localStorage.setItem('restaurants', restaurantsJSON);
 }

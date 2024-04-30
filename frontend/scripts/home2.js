@@ -3,7 +3,7 @@ console.log('restaurants: ',restaurants);
 
 const restaurantContainer=document.getElementById('restaurants-container');
 const restaurantData="";
-restaurants.forEach(restaurant => {
+restaurants.forEach((restaurant,index)=> {
 
     //add restaurent data dynamically
 
@@ -13,7 +13,9 @@ restaurants.forEach(restaurant => {
 
     // Populate the div with restaurant data
     restaurantDiv.innerHTML = `
-        <img id="resto-pic" src="${restaurant.picSrc}" alt="restaurant">
+
+    <a id="a-restaurent" class=a${index} href="dishes.html">
+        <img id="resto-pic"  src="${restaurant.picSrc}" alt="restaurant">
         <h3 id="resto-name">${restaurant.name}</h3>
         <div class="div5">
             <div class="divr">
@@ -24,18 +26,11 @@ restaurants.forEach(restaurant => {
                 <div id="resto-type" class ="restaurantType">${restaurant.type}</div>
                 <div id="resto-location" class="restaurantType">${restaurant.location}</div>
             </div>
-        </div>
+        </div></a>
     `;
     // Append the restaurant div to the container
     restaurantContainer.appendChild(restaurantDiv);
-
-    
-    
 });
-
-
-
-
 
 // Function to render restaurants based on search input
 function renderRestaurants(searchValue) {
@@ -84,3 +79,14 @@ const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', function() {
     renderRestaurants(this.value);
 });
+
+
+for (let index = 0; index < restaurants.length; index++) {
+    const element = document.getElementsByClassName(`a${index}`)
+    console.log('element',element);
+
+    element.addEventListener('click',()=>{
+        localStorage.setItem('restaurantClick',index);
+    })
+    
+}
