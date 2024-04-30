@@ -8,7 +8,17 @@
         rating: '4.3',
         deliveryTime: '65-70 mins',
         type: 'Indian',
-        location: 'Durgi'
+        location: 'Durgi',
+        dishes: [
+            {
+                name: "Mix Paratha",
+                picSrc: "https://media-cdn.tripadvisor.com/media/photo-s/19/0b/74/b6/aloo-paratha-with-curd.jpg",
+                description: 'A type of Indian flatbread, typically a variant of "paratha," made with a mixture of different ingredients.',
+                ratingReviews:'3.2 (15)',
+                price:50
+            },
+
+        ]
     },
     {
         id: 2,
