@@ -101,7 +101,17 @@ function updatePassword(email, password) {
     }
   }
 }
-
+//functions for getting restaurants
+function getRestaurants()
+{
+  const restaurants = localStorage.getItem("restaurants");
+  if(restaurants)
+  {
+    return JSON.parse(restaurants);
+  }else{
+    return null;
+  }
+}
 
 function addToCart(id) {
   const users = getUsers();
@@ -130,3 +140,4 @@ function addToCart(id) {
     }
   }
 }
+

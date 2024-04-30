@@ -152,7 +152,8 @@ footer {
   color: white;
   text-align: center;
   padding: 20px 0;
-} /*# sourceMappingURL=main.css.map */
+  width: 100%;
+}
 section.about {
   padding: 100px;
   max-width: max-content;
@@ -277,7 +278,7 @@ h4 {
   margin-bottom: 15px;
   width: 200px; /* Adjust padding as needed */
   margin-top: 5px;
-  background: #fc8019
+  background: #fc8019;
 }
 .icon-swal {
   padding: 0px;
@@ -288,11 +289,201 @@ h4 {
 .text-swal {
 }
 
-#get-start-text{
+#get-start-text {
   color: rgb(11, 69, 92);
   text-align: center;
   margin-top: 20px;
 }
-#get-start-text:hover{
+#get-start-text:hover {
   color: white;
+}
+
+.search {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgb(99, 176, 150);
+  padding: 20px 0;
+}
+
+.search input[type="text"] {
+  padding: 10px;
+  width: 60%;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: #fff;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background-color: #0eb157;
+}
+.container-home2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.sec-search-bar,
+main {
+  max-height: 100vh; /* Limit the height of the container to the viewport height */
+  overflow-y: auto;
+}
+.container-restaurant {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 20px;
+}
+.restaurant {
+  margin: 20px;
+  padding: 0;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.restaurant:hover {
+  transform: translateY(-5px); /* Move the item slightly upwards on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant img {
+  width: 250px;
+  height: 190px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+}
+
+.restaurant h3 {
+  margin-top: 10px;
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: inherit;
+  outline: none;
+  margin: 0px;
+  font-family: Basis_Grotesque_Pro_Bold;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+  overflow: hidden;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.restaurant p {
+  margin-top: 5px;
+  color: #666;
+}
+
+#rating {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+.deliveryTime {
+  list-style: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: Basis_Grotesque_Pro_Bold;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+  overflow: hidden;
+  margin-left: 2px;
+  overflow-wrap: break-word;
+}
+.restaurantType {
+  list-style: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  font-family: Basis_Grotesque_Pro;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+  overflow: hidden;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  width: 200px; /* Adjust the width as needed */
+
+  /* Ensure text doesn't wrap */
+  white-space: nowrap;
+
+  /* Add ellipsis (...) at the end if text overflows */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.div5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#resto-name{
+  margin-top: 10px;
+}
+#resto-type{
+  margin-top: 2px;
+}
+#resto-location{
+  margin-bottom: 2px;
+}
+
+.div-group1{
+  width: 100%;
+}
+
+#a-restaurent{
+  text-decoration: none;
+  
+}
+
+.dishd{
+  width: max-content;
+  margin: 0 10px;
+  
+  
+
+  
 }

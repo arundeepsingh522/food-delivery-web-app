@@ -66,11 +66,9 @@ function validateInputs(username, email, password, confirmPassword) {
   }
   return errorMessage;
 }
-
 function displayError(message) {
   errorMessage.innerText = message;
 }
-
 function clearError() {
   errorMessage.innerText = "";
 }
