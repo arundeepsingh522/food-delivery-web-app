@@ -113,6 +113,17 @@ function getRestaurants()
   }
 }
 
+function getDishes(index)
+{
+  const restaurants = getRestaurants();
+  if(restaurants)
+  {
+    return restaurants[index].dishes;
+  }else{
+    return null;
+  }
+}
+
 function addToCart(id) {
   const users = getUsers();
   const currentUserEmail = getCurrentUserEmail();

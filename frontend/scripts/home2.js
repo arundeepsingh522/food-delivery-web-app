@@ -14,7 +14,7 @@ restaurants.forEach((restaurant,index)=> {
     // Populate the div with restaurant data
     restaurantDiv.innerHTML = `
 
-    <a id="a-restaurent" class=a${index} href="dishes.html">
+    <a id="a-restaurent" class=a${index} href="dishes.html?index=${index}">
         <img id="resto-pic"  src="${restaurant.picSrc}" alt="restaurant">
         <h3 id="resto-name">${restaurant.name}</h3>
         <div class="div5">
@@ -49,12 +49,12 @@ function renderRestaurants(searchValue) {
     } else {
 
     // Render filtered restaurants
-    filteredRestaurants.forEach(restaurant => {
+    filteredRestaurants.forEach((restaurant,index) => {
         // Create restaurant div
         const restaurantDiv = document.createElement('div');
         restaurantDiv.classList.add('restaurant');
         restaurantDiv.innerHTML = `
-        <a id="a-restaurent" href="dishes.html">
+        <a id="a-restaurent" href="dishes.html?index=${index}">
         <img id="resto-pic" src="${restaurant.picSrc}" alt="restaurant">
         <h3 id="resto-name">${restaurant.name}</h3>
         <div class="div5">
@@ -79,14 +79,3 @@ const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', function() {
     renderRestaurants(this.value);
 });
-
-
-for (let index = 0; index < restaurants.length; index++) {
-    const element = document.getElementsByClassName(`a${index}`)
-    console.log('element',element);
-
-    element.addEventListener('click',()=>{
-        localStorage.setItem('restaurantClick',index);
-    })
-    
-}

@@ -16,7 +16,7 @@
             <header>
                 <nav>
                     <ul>
-                        <li><a  style="font-size: larger;" href="home2.html ">Home</a></li>
+                        <li><a style="font-size: larger;" href="home2.html">Home</a></li>
                         <li><a href="orders.html">Orders</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="help.html">Help</a></li>
@@ -26,45 +26,26 @@
             </header>
             <section class="sec-search-bar">
                 <div class="search">
-                    <input type="text" id="searchInput" placeholder="Search Restaurants" />
+                    <input type="text" id="searchInput" placeholder="Find Your Favorite Dish..." />
                     <button class="search-btn">Search</button>
                 </div>
             </section>
             <main class="main">
-                <div id="restaurants-container" class="container-restaurant">
-                    <div class="dishes-container">
-                        <img id="resto-pic" src="https://media-cdn.tripadvisor.com/media/photo-s/19/0b/74/b6/aloo-paratha-with-curd.jpg"
-                            alt="restaurant">
-                            <div>
-                                <h3 id="resto-name">Mix Paratha</h3>
-                            </div>
-                        <div class="div5">
-                            <div class="divr">
-                                <img id="rating" src="../images/rating.svg">
-                                <h5 id="resto-rating-time" class="deliveryTime">3.2(15)</h5>
-                            </div>
-                            <div class="div6 dish-desc">
-                                <div id="resto-type" class="restaurantType dishd">A type of Indian flatbread, typically a variant of "paratha,<br>" made with a mixture of different ingredients.</div>
-                                <div id="resto-location" class="restaurantType dish-price">50</div>
-                            </div>
-                            <button id="addToCart">Add To Cart</button>
-                        </div>
-                    </div>
+                <div id="dishes-div" class="dishes-container">
+                    <!-- This is where your dishes will be dynamically populated -->
                 </div>
             </main>
-            </div>
-            <footer>
-                <p>&copy; 2024 Food Delivery Web App</p>
-                <p>All rights reserved.</p>
-            </footer>
-            
         </div>
-       
     
-    
+    <footer>
+        <p>&copy; 2024 Food Delivery Web App</p>
+        <p>All rights reserved.</p>
+    </footer>
+</div>
+
     <script src="../scripts/utils.js"></script>
     <script src="../../backend/user-management.js"></script>
-    <script src=".././scripts/dishes.js"></script>
+    <script src="../scripts/dishes.js"></script>
 </body>
 
 </html>
