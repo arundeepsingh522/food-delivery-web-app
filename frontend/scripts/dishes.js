@@ -1,5 +1,6 @@
 // Check which restaurant the user selected
 const index = getIndexFromURL();
+const restaurant =getRestaurants();
 const dishes = getDishes(index);
 
 let dishesHtml = "";
@@ -78,7 +79,7 @@ function renderDishes(searchValue)
                         <div id="resto-type" class="restaurantType dishd">${dish.description}</div>
                         <div id="resto-location" class="restaurantType dish-price">${dish.price}</div>
                     </div>
-                    <button id="addToCart">Add To Cart</button>
+                    <button class="addToCart" data-dish-id="${dish.id}">Add To Cart</button>
                 </div>
             `;
 
@@ -97,9 +98,18 @@ searchInput.addEventListener('input',(data)=>{
 
     renderDishes(data.target.value);
     console.log('data',data.target.value)
+});
+
+document.addEventListener('click',(event)=>{
+    if(event.target.classList.contains('addToCart'))
+    {
+        const dishId = event.target.dataset.dishId;
+        console.log('dishId',dishId);  
+        addToCart(dishId) ;
+    }
 
     
-
-});
+    
+})
 
 

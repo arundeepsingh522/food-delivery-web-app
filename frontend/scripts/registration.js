@@ -42,6 +42,10 @@ document.querySelector("#submit-signup").addEventListener("click", () => {
     } else {
       //window.location.href='login.html'
       showToast("Sign up successful!");
+      //add users data base 
+      const user={username,email,password};
+      addUserToDb(user);
+
       navigateToPage("login.html");
     }
   }

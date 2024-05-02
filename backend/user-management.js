@@ -5,11 +5,9 @@ function saveUser(username, email, password) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
     //check if the email already exists
-
     const existingUser = users.find((user) => user.email == email);
-    console.log('exs user',existingUser);
+    console.log("exs user", existingUser);
     if (existingUser) {
-
       throw new Error("Email address already exists");
     }
     //else create a new user
@@ -72,13 +70,11 @@ function getCurrentUser() {
 }
 function getCurrentUserEmail() {
   const user = getCurrentUser();
-  if(user)
-  {
+  if (user) {
     return user.email;
-  }else{
+  } else {
     return null;
   }
-
 }
 function getUsers() {
   const users = localStorage.getItem("users");
@@ -102,34 +98,66 @@ function updatePassword(email, password) {
   }
 }
 //functions for getting restaurants
-function getRestaurants()
-{
+function getRestaurants() {
   const restaurants = localStorage.getItem("restaurants");
-  if(restaurants)
-  {
+  if (restaurants) {
     return JSON.parse(restaurants);
-  }else{
+  } else {
     return null;
   }
 }
 
-function getDishes(index)
+function getRestaurant(index)
 {
+  const restaurant = getRestaurants();
+  return restaurant[index];
+}
+
+function getAllDishes()
+{
+  return JSON.parse(localStorage.getItem("dishes"));
+}
+function addDishes()
+{
+  localStorage.setItem("dishes",JSON.stringify());
+}
+
+
+
+function getDishes(dishesArray) {
   const restaurants = getRestaurants();
-  if(restaurants)
-  {
-    return restaurants[index].dishes;
+  const dishesJson=get
+  const dishes= [];
+  
+  dishesArray.forEach(dish => {
+    const dish= 
+  });
+}
+function getCartDishes()
+{
+  const dishes = getDishes();
+  const users = getUsers();
+  const currentUserEmail = getCurrentUserEmail();
+  const cart=users.find(user => user.email === currentUserEmail).cart;
+  cart.forEach(element => {
+    const dish = dishes.find(dish => dish.id === element);
+    console.log("dish",dish);
+  });
+  if(cart){
+    return cart;
   }else{
     return null;
   }
-}
+  console.log("cart",cart)
 
+
+}
 function addToCart(id) {
   const users = getUsers();
   const currentUserEmail = getCurrentUserEmail();
 
-  console.log('current email',currentUserEmail);
-  console.log('users',users);
+  console.log("current email", currentUserEmail);
+  console.log("users", users);
 
   if (users) {
     const userIndex = users.findIndex((user) => {
@@ -139,11 +167,11 @@ function addToCart(id) {
     if (userIndex !== -1) {
       const cartArr = users[userIndex].cart || [];
       cartArr.push(id);
-      console.log('cartArr', cartArr);
+      console.log("cartArr", cartArr);
       users[userIndex].cart = cartArr;
 
-      console.log('after users', users);
-      localStorage.setItem('users', JSON.stringify(users)); // Store the entire users array
+      localStorage.setItem("users", JSON.stringify(users)); // Store the entire users array\
+      console.log("after users", users);
 
       return true;
     } else {
@@ -151,4 +179,3 @@ function addToCart(id) {
     }
   }
 }
-
