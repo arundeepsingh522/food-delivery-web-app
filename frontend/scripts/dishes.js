@@ -11,6 +11,7 @@ console.log('new cart',cart);
 // Function to update the button text based on cart state
 
 if (dishes) {
+  
   dishes.forEach((dish) => {
     const dishesDiv = document.createElement("div");
     dishesDiv.classList.add("bg-gradient");

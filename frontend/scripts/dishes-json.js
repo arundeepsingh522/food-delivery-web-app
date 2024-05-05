@@ -31,7 +31,7 @@
   },
   {
     id: 14,
-    name: "Noodles Burger2",
+    name: "Noodles Burger3",
     picSrc:
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/028a738cb13f2a20b34db778595f0814",
     description:
@@ -41,7 +41,7 @@
   },
   {
     id: 15,
-    name: "Noodles Burger2",
+    name: "Noodles Burger4",
     picSrc:
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/028a738cb13f2a20b34db778595f0814",
     description:
