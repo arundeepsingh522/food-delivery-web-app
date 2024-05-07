@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="../styles/scss/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style></style>
+</head>
+
+<body>
+    <div class="container-home2">
+        <div class="div-group1">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a style="font-size: larger;" href="home2.html">Home</a></li>
+                        <li><a href="orders.html">Orders</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact-us2.html">Contact Us</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="sec-search-bar">
+                <div class="search">
+                    <input type="text" id="searchInput" placeholder="Find Your Favorite Dish..." />
+                    <button class="search-btn">Search</button>
+                </div>
+            </section>
+            <main class="main">
+                <div id="dishes-div" class="dishes-container">
+                    <!-- This is where your dishes will be dynamically populated -->
+                </div>
+            </main>
+        </div>
+    
+    <footer>
+        <p>&copy; 2024 Food Delivery Web App</p>
+        <p>All rights reserved.</p>
+    </footer>
+</div>
+
+    <script src="../scripts/dishes-json.js"></script>
+    <script src="../scripts/restaurants.js"></script>
+    <script src="../scripts/utils.js"></script>
+    <script src="../../backend/user-management.js"></script>
+    <script src="../scripts/dishes.js"></script>
+</body>
+
+</html>

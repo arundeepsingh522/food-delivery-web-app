@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search and Add to Cart</title>
+    <style>
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .items-container {
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            
+        }
+        .item {
+            width: 300px; /* 50% width with a small margin between items */
+            border: 1px solid green;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .item h3 {
+            margin-top: 0;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="searchItems()">Search</button>
+        </div>
+        
+        <div class="items-container" id="itemsContainer">
+            <!-- Items will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        // Sample items data
+        const items = [
+            { name: "Item 1", description: "Description of Item 1" },
+            { name: "Item 2", description: "Description of Item 2" },
+            { name: "Item 3", description: "Description of Item 3" },
+            { name: "Item 4", description: "Description of Item 4" },
+            { name: "Item 5", description: "Description of Item 5" },
+            { name: "Item 6", description: "Description of Item 6" },
+            { name: "Item 7", description: "Description of Item 7" },
+            { name: "Item 8", description: "Description of Item 8" },
+            { name: "Item 9", description: "Description of Item 9" },
+            { name: "Item 10", description: "Description of Item 10" },
+            { name: "Item 11", description: "Description of Item 11" },
+            { name: "Item 12", description: "Description of Item 12" },
+            { name: "Item 13", description: "Description of Item 13" },
+            { name: "Item 14", description: "Description of Item 14" },
+            { name: "Item 15", description: "Description of Item 15" },
+            { name: "Item 16", description: "Description of Item 16" },
+            { name: "Item 17", description: "Description of Item 17" },
+            { name: "Item 18", description: "Description of Item 18" },
+            { name: "Item 19", description: "Description of Item 19" },
+            { name: "Item 20", description: "Description of Item 20" },
+        ];
+
+        // Function to display items
+        function displayItems(filteredItems) {
+            const itemsContainer = document.getElementById("itemsContainer");
+            itemsContainer.innerHTML = "";
+
+            filteredItems.forEach(item => {
+                const itemElement = document.createElement("div");
+                itemElement.classList.add("item");
+                itemElement.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <button onclick="addToCart('${item.name}')">Add to Cart</button>
+                `;
+                itemsContainer.appendChild(itemElement);
+            });
+        }
+
+        // Function to search items
+        function searchItems() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchTerm) || item.description.toLowerCase().includes(searchTerm));
+            displayItems(filteredItems);
+        }
+
+        // Function to add item to cart (example)
+        function addToCart(itemName) {
+            alert(`"${itemName}" added to cart! (Functionality not implemented in this example)`);
+        }
+
+        // Display all items initially
+        displayItems(items);
+    </script>
+</body>
+</html>
