@@ -37,7 +37,7 @@ if (dishes) {
     
   });
 } else {
-  dishesContainer.innerHTML = "No Dishes Found";
+  dishesContainer.innerHTML = "No + Found";
 }
 console.log("dishes", dishes);
 function getIndexFromURL() {
@@ -65,7 +65,6 @@ function renderDishes(searchValue) {
     filteredDishes.forEach((dish) => {
       const dishesDiv = document.createElement("div");
       dishesDiv.classList.add("bg-gradient");
-
       dishesDiv.innerHTML = `
                 <img id="resto-pic" src="${dish.picSrc}" alt="restaurant">
                 <div>
@@ -112,11 +111,18 @@ document.addEventListener("click", (event) => {
     if(buttonText.includes('Add'))
     {
       //add dishes
-      console.log("inside add event");
-      const result = addToCart(dishId);
 
-      console.log('add to cart result==',result);
-      updateButton(true,dishId);
+      console.log("inside add event");
+      
+      const result = addToCart(dishId,index);
+
+      console.log('add to cart result================',result);
+      if(result)
+        {
+
+          updateButton(true,dishId);
+        }
+      
     }else{
 
       console.log('inside remove event');

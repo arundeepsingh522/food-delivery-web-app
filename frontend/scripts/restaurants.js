@@ -10,7 +10,7 @@
       deliveryTime: "65-70 mins",
       type: "Indian",
       location: "Durgi",
-      dishes: [11, 12, 13, 14, 15]
+      dishes: [11, 12, 13, 14, 15, 16]
     },
     {
       id: 2,
@@ -21,7 +21,7 @@
       deliveryTime: "55-60 mins",
       type: "North Indian, Chinese",
       location: "Samrala Chowk",
-      dishes: []
+      dishes: [21,22,23,24,25,26]
     },
     {
       id: 3,
@@ -32,6 +32,7 @@
       deliveryTime: "50-55 mins",
       type: "Pizzas, Desserts, Beverages..",
       location: "Sector 32",
+      dishes:[31,32,33,34,35,36],
     },
     {
       id: 4,
@@ -42,7 +43,8 @@
       deliveryTime: "45-50 mins",
       type: "Barista Coffee",
       location: "Civil Lines",
-      dishes: "",
+      dishes:[41,42,43,44,45,46],
+
     },
     {
       id: 5,
@@ -53,6 +55,7 @@
       deliveryTime: "50-55 mins",
       type: "North Indian, Snacks, Chinese",
       location: "Ludhiana Junction",
+      dishes:[51,52,53,54,55,56],
     },
     {
       id: 6,
@@ -63,6 +66,7 @@
       deliveryTime: "50-55 mins",
       type: "South Indian, North Indian",
       location: "Sector 32",
+      dishes:[61,62,63,64,65,66],
     },
     {
       id: 7,
@@ -73,6 +77,7 @@
       deliveryTime: "55-60 mins",
       type: "Sweets, Snacks",
       location: "Sector 32",
+      dishes:[71,72,73,74,75,76],
     },
     {
       id: 8,
@@ -83,6 +88,7 @@
       deliveryTime: "40 mins",
       type: "Sweets,Bakery",
       location: "Sector-17,Chandigarh",
+      dishes:[81,82,83,84,85,86],
     },
     {
       id: 9,
@@ -93,7 +99,9 @@
       deliveryTime: "45 mins",
       type: "Bakery,Desserts",
       location: "Industrial Area,Chandigarh",
-    },
+      dishes:[91,92,93,94,95,96],
+    }
+    /*,
     {
       id: 10,
       picSrc:
@@ -103,6 +111,7 @@
       deliveryTime: "30 mins",
       type: "North-Indian,South-Indian",
       location: "Sector-35,Chandigarh",
+      dishes:[101,102,103,104,105,106],
     },
     {
       id: 11,
@@ -113,6 +122,7 @@
       deliveryTime: "45 mins",
       type: "Italian,Continental",
       location: "Sector-35,Chandigarh",
+      dishes:[111,112,113,114,115,116],
     },
     {
       id: 12,
@@ -123,7 +133,8 @@
       deliveryTime: "45 mins",
       type: "North-Indian,Street-food",
       location: "Sector-7,Chandigarh",
-    },
+      dishes:[121,122,123,124,125,126],
+    },*/
   ];
   // Convert the array to JSON string
   const restaurantsJSON = JSON.stringify(restaurants);

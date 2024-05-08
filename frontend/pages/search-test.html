@@ -87,16 +87,15 @@
 
         // Function to search items
         function searchItems() {
+            
             const searchTerm = document.getElementById("searchInput").value.toLowerCase();
             const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchTerm) || item.description.toLowerCase().includes(searchTerm));
             displayItems(filteredItems);
         }
-
         // Function to add item to cart (example)
         function addToCart(itemName) {
             alert(`"${itemName}" added to cart! (Functionality not implemented in this example)`);
         }
-
         // Display all items initially
         displayItems(items);
     </script>

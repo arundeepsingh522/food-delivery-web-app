@@ -70,3 +70,47 @@ function showCustomizedAlert(errorMessage) {
         }
   });
 }
+
+function showCustomizedAlertCart(id)
+{
+  Swal.fire({
+    title: "Items already in cart",
+    text: "Your cart contains items from another restaurant. Would you like to reset your cart for adding items from this restaurant?",
+    icon: "warning",
+    showCancelButton: true,
+    cancelButtonText: "No",
+    confirmButtonColor: '#008B8B',
+    confirmButtonText: "Yes Start AFRESH",
+    customClass: {
+      cancelButtonText: 'custom-swal-cancel', // Apply custom class to the confirm button
+      confirmButtonText:'custom-swal-confirm',
+      title:'title-swal',
+      text:'text-swal'
+  }
+    
+}).then((result) => {
+    if (result.isConfirmed) {
+        // Reset the cart and add the new item
+        console.log("user cart is clear");
+        clearCart();
+
+        return 'alert-confirm';
+        
+    }
+});
+
+}
+
+
+function formatDate(date) {
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const amPM = hours >= 12 ? 'PM' : 'AM';
+  const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+  const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+  
+  return `${month} ${day}, ${formattedHours}:${formattedMinutes} ${amPM}`;
+}

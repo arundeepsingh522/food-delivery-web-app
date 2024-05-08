@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox with Headings</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
+    .item-heading {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .item-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .item-content div {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">
+      <div class="item-heading">Fruits:</div>
+      <div class="item-content">
+        <div>Apple</div>
+        <div>Orange</div>
+        <div>Banana</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-heading">Vegetables:</div>
+      <div class="item-content">
+        <div>Carrot</div>
+        <div>Cucumber</div>
+        <div>Tomato</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-heading">Grains:</div>
+      <div class="item-content">
+        <div>Rice</div>
+        <div>Wheat</div>
+        <div>Oats</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

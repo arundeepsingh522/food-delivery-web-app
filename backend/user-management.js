@@ -119,16 +119,16 @@ function addDishes() {
 }
 
 function getDishes(dishesArray) {
-  console.log("dish arr",dishesArray);
+  console.log("dish arr", dishesArray);
   const dishesJson = getAllDishes();
-  console.log("dish json",dishesJson);
+  console.log("dish json", dishesJson);
   const dishes = [];
   dishesArray.forEach((dishId) => {
     const dish = dishesJson.find((dish) => dish.id == dishId);
     if (dish) {
-      console.log('inside dish');
+      console.log("inside dish");
       dishes.push(dish);
-    }else{
+    } else {
       console.log("ouside dish");
     }
   });
@@ -149,18 +149,16 @@ function getCartDishes() {
   } else {
     return null;
   }
-  console.log("cart", cart);
 }
 
-function addToCart(id) {
+function addToCart(id, restaurantId) {
   const users = getUsers();
   const currentUserEmail = getCurrentUserEmail();
   console.log("current email", currentUserEmail);
   console.log("users", users);
 
   if (users) {
-    const userIndex = users.findIndex((user) => 
-    {
+    const userIndex = users.findIndex((user) => {
       return user.email === currentUserEmail;
     });
     if (userIndex !== -1) {
@@ -171,7 +169,19 @@ function addToCart(id) {
       } else {
         // If the cart is not empty, check if the dish ID is already in the cart
         if (!cartArr.includes(id)) {
-          cartArr.push(id); // Push the dish ID if it's not already in the cart
+          //
+          //existing restourent id
+          const existingResId = cartArr[0].charAt(0);
+          const resId = parseInt(id.charAt(0));
+          restaurantId = parseInt(restaurantId) + 1;
+          console.log("resIdddddddddddddd", resId, existingResId);
+          if (existingResId != resId) {
+            showCustomizedAlertCart(id);
+            // return 'custom-alert';
+          } else {
+            console.log("in elseeeeeeeeeeeeeeeeeeeeeeeeeeee");
+            cartArr.push(id); // Push the dish ID if it's not already in the cart
+          }
         } else {
           // Dish ID is already in the cart
           console.log("Dish already in cart");
@@ -179,7 +189,6 @@ function addToCart(id) {
         }
       }
       console.log("dish added");
-
       console.log("cartArr", cartArr);
       users[userIndex].cart = cartArr;
       localStorage.setItem("users", JSON.stringify(users)); // Store the entire users array
@@ -190,7 +199,6 @@ function addToCart(id) {
 }
 
 function removeFromCart(dishId) {
-
   const users = getUsers();
   const currentUserEmail = getCurrentUserEmail();
   console.log("current email", currentUserEmail);
@@ -200,50 +208,29 @@ function removeFromCart(dishId) {
     const userIndex = users.findIndex((user) => {
       return user.email === currentUserEmail;
     });
-
-    if(userIndex!==-1)
-    {
+    if (userIndex !== -1) {
       const index = users[userIndex].cart.indexOf(dishId);
-      users[userIndex].cart.splice(index,1);
+      users[userIndex].cart.splice(index, 1);
       localStorage.setItem("users", JSON.stringify(users)); // Store the entire users array
       console.log("after dish remove", users);
       return true;
     }
-
-    
-
-
-    
   }
 }
-
 function getCart() {
-
   const users = getUsers();
   const currentUserEmail = getCurrentUserEmail();
-  
-
   if (users) {
     const userIndex = users.findIndex((user) => {
       return user.email === currentUserEmail;
     });
-
-    if(userIndex!==-1)
-    {
-      return users[userIndex].cart
-      
-     
-    }else{
+    if (userIndex !== -1) {
+      return users[userIndex].cart;
+    } else {
       return false;
     }
-
-    
-
-
-    
   }
 }
-
 
 function clearCart() {
   const allusers = getUsers();
@@ -256,4 +243,61 @@ function clearCart() {
   allusers[userIndex] = currentUser;
   localStorage.setItem("users", JSON.stringify(allusers));
   return true;
+}
+
+function generateOrderId() {
+  const randomId = Math.floor(Math.random() * 1000000);
+  return `order_${randomId}`;
+}
+function addOrders(order) {
+  const users = getUsers();
+  const currentUserEmail = getCurrentUserEmail();
+
+  if (users && currentUserEmail) {
+    const user = users.find((user) => user.email === currentUserEmail);
+
+    if (user) {
+      user.orders = user.orders || [];
+      user.orders.push(order);
+      localStorage.setItem("users", JSON.stringify(users));
+      return true;
+    }
+  }
+  return false;
+}
+function createAndStoreOrder(items, deliveryFee) {
+  const orderId = generateOrderId();
+  const currentDate = new Date();
+  const formattedDate = formatDate(currentDate);
+
+  const order = {
+    id: orderId,
+    date: formattedDate,
+    items: items,
+    deliveryFee: deliveryFee,
+  };
+
+  // let existingOrders = JSON.parse(localStorage.getItem('orders')) || [];
+  //existingOrders.push(order);
+  //localStorage.setItem('orders', JSON.stringify(existingOrders));
+
+  const result = addOrders(order);
+
+  if (result) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function getCurrenUserOrders() {
+  const users = getUsers();
+
+  const currentUserEmail = getCurrentUserEmail();
+  const orders = users.find((user) => user.email === currentUserEmail).orders;
+  if (orders) {
+    return orders;
+  } else {
+    return null;
+  }
 }

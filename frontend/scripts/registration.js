@@ -45,7 +45,6 @@ document.querySelector("#submit-signup").addEventListener("click", () => {
       //add users data base 
       const user={username,email,password};
       saveUser(user);
-
       navigateToPage("login.html");
     }
   }
