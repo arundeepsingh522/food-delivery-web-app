@@ -4,14 +4,11 @@ const restaurant = getRestaurant(index);
 const dishes = getDishes(restaurant.dishes);
 let dishesHtml = "";
 const dishesContainer = document.getElementById("dishes-div");
-const cart = getCart()||[];
-console.log('new cart',cart);
-
-
+const cart = getCart() || [];
+console.log("new cart", cart);
 // Function to update the button text based on cart state
 
 if (dishes) {
-  
   dishes.forEach((dish) => {
     const dishesDiv = document.createElement("div");
     dishesDiv.classList.add("bg-gradient");
@@ -34,7 +31,6 @@ if (dishes) {
             </div>
         `;
     dishesContainer.appendChild(dishesDiv);
-    
   });
 } else {
   dishesContainer.innerHTML = "No + Found";
@@ -85,7 +81,6 @@ function renderDishes(searchValue) {
       dishesContainer.appendChild(dishesDiv);
     });
     console.log("after searchhhhhhhhhhhhh");
-
     updateDishes(filteredDishes);
   }
 }
@@ -94,42 +89,40 @@ function renderDishes(searchValue) {
 renderDishes("");
 
 const searchInput = document.getElementById("searchInput");
-
 searchInput.addEventListener("input", (data) => {
   renderDishes(data.target.value);
   console.log("data", data.target.value);
 });
 
 document.addEventListener("click", (event) => {
+  
+  console.log('inside the onclick event listener');
   if (event.target.classList.contains("addToCart")) {
     console.log("inside event");
     console.log("value==", event.target.textContent);
-    const buttonText=event.target.textContent;
+    const buttonText = event.target.textContent;
     const dishId = event.target.dataset.dishId;
     console.log("dishId", dishId);
-    
-    if(buttonText.includes('Add'))
-    {
+
+    if (buttonText.includes("Add")) {
       //add dishes
+      const result =addToCart(dishId,index);
 
-      console.log("inside add event");
-      
-      const result = addToCart(dishId,index);
 
-      console.log('add to cart result================',result);
-      if(result)
-        {
+      //use here perform add to cart
 
-          updateButton(true,dishId);
-        }
-      
-    }else{
-
-      console.log('inside remove event');
+      if (result==true) {
+        updateButton(true, dishId);
+        updateDishes(null);
+      }
+    } else {
+      console.log("inside remove event");
       removeFromCart(dishId);
-      updateButton(false,dishId);
+      updateButton(false, dishId);
+      updateDishes(null)
     }
-    
+  
+
     /*if (result) {
       //change add to cart button text
       updateButton(true, dishId);
@@ -144,30 +137,30 @@ document.addEventListener("click", (event) => {
   }
 });
 function updateButton(flag, dishId) {
-  console.log('type of ',typeof dishId)
+  console.log("type of ", typeof dishId);
   const button = document.getElementById(dishId);
-  console.log("inside update did",dishId);
+  console.log("inside update did", dishId);
   console.log("flag===", flag);
 
-  console.log("button",button);
+  console.log("button", button);
   if (flag) {
     //console.log("txt===","Remove From Cart");
     button.textContent = "Remove From Cart";
-    button.style.backgroundColor="#D22B2B";
-   button.addEventListener('mouseenter', () => {
+    button.style.backgroundColor = "#D22B2B";
+    button.addEventListener("mouseenter", () => {
       button.style.backgroundColor = "#cf5951";
     });
-    button.addEventListener('mouseleave', () => {
-      button.style.backgroundColor = '#D22B2B'; // Reset to default color
+    button.addEventListener("mouseleave", () => {
+      button.style.backgroundColor = "#D22B2B"; // Reset to default color
     });
   } else {
     console.log("txt===", "Add To Cart");
     button.textContent = "Add To Cart";
-    button.style.backgroundColor="#0B455C";
-    button.addEventListener('mouseenter', () => {
+    button.style.backgroundColor = "#0B455C";
+    button.addEventListener("mouseenter", () => {
       button.style.backgroundColor = "rgb(85, 138, 138)";
     });
-    button.addEventListener('mouseleave', () => {
+    button.addEventListener("mouseleave", () => {
       button.style.backgroundColor = "#0B455C"; // Reset to default color
     });
   }
@@ -175,33 +168,29 @@ function updateButton(flag, dishId) {
   //  button.textContent = isInCart ? "Remove From Cart" : "Add To Cart";
 }
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('inside DoMContentLoaded');
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("inside DoMContentLoaded");
   updateDishes(null);
 });
-
-
-function updateDishes(filteredDishes)
-{
+function updateDishes(filteredDishes) {
   let dishesArray;
-  
-  if(filteredDishes)
-  {
-    dishesArray=filteredDishes;
 
-  }else{
-    dishesArray=dishes;
+  if (filteredDishes) {
+
+    console.log('inside filtered dishes');
+    dishesArray = filteredDishes;
+  } else {
+    console.log('outside filtered dishes');
+    dishesArray = dishes;
   }
   console.log("inside update dishesssssssssssssssssssssssssssss");
   dishesArray.forEach((dish) => {
-    if (cart.some(item => item == dish.id)) {
-        console.log("inside", dish.id);
-        updateButton(true, dish.id);
+    if (cart.some((item) => item == dish.id)) {
+      console.log("inside", dish.id);
+      updateButton(true, dish.id);
     } else {
-        console.log("outside", dish.id);
-        //updateButton(false, dish);
+      console.log("outside", dish.id);
+      //updateButton(false, dish);
     }
-});
+  });
 }
-

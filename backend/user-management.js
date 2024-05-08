@@ -151,7 +151,7 @@ function getCartDishes() {
   }
 }
 
-function addToCart(id, restaurantId) {
+ function addToCart(id, restaurantId) {
   const users = getUsers();
   const currentUserEmail = getCurrentUserEmail();
   console.log("current email", currentUserEmail);
@@ -176,7 +176,24 @@ function addToCart(id, restaurantId) {
           restaurantId = parseInt(restaurantId) + 1;
           console.log("resIdddddddddddddd", resId, existingResId);
           if (existingResId != resId) {
-            showCustomizedAlertCart(id);
+           
+
+           try {
+            const result =  showCustomizedAlertCart(id,restaurantId);
+            return false;
+         
+          /*  if (result==true) {
+              console.log('resukt isssssss',result);
+                cartArr.push(id);
+                console.log("Dish added to cart");
+                console.log('User confirm the cart');
+            } else {
+                console.log("User canceled the action");
+                return false;
+            }*/
+        } catch (error) {
+            console.error("Error showing alert:", error);
+        }
             // return 'custom-alert';
           } else {
             console.log("in elseeeeeeeeeeeeeeeeeeeeeeeeeeee");

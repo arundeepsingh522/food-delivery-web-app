@@ -8,12 +8,11 @@ const deliveryFeeDiv = document.getElementById("delivery-value");
 const totalDiv = document.getElementById("total-value");
 const cartContainer = document.getElementById("cart-container");
 const contentCartContainer = document.getElementById("content-cart");
-
 //these are the cart dishes
-if (cart.length>0) {
+if (cart.length > 0) {
   const dishes = getDishes(cart);
   console.log("fetched dishes", dishes);
-  
+
   let cartItemHtml = cartContainer.innerHTML;
   dishes.forEach((dish) => {
     subTotal += dish.price;

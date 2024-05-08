@@ -71,7 +71,7 @@ function showCustomizedAlert(errorMessage) {
   });
 }
 
-function showCustomizedAlertCart(id)
+function showCustomizedAlertCart(id,restaurantId)
 {
   Swal.fire({
     title: "Items already in cart",
@@ -91,11 +91,16 @@ function showCustomizedAlertCart(id)
 }).then((result) => {
     if (result.isConfirmed) {
         // Reset the cart and add the new item
-        console.log("user cart is clear");
+        console.log("confirmed clicked by user");
         clearCart();
-
-        return 'alert-confirm';
+        addToCart(id,restaurantId);
+        updateButton(true,id);
+        return true;
         
+    }else{
+      console.log('user press the no button of swal');
+      false;
+
     }
 });
 
