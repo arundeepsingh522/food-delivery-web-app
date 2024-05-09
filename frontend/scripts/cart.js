@@ -18,12 +18,12 @@ if (cart.length > 0) {
     console.log("dd", dish.id, dish.picSrc);
     cartItemHtml +=
       "<div class='item-cart'>" +
-      `<img class='img-cart-dish' src='${dish.picSrc}'>` +
+      `<div><img class='img-cart-dish' src='${dish.picSrc}'></div>` +
       `<h3>${dish.name}</h3>` + // Placeholder for dish title
       `<h3>₹${dish.price}</h3>` +
       `<h3>1</h3>` + // Assuming fixed quantity for now
       `<h3>₹${dish.price}</h3>` + // Assuming total price for one item
-      `<button id='${dish.id}' class='bt-remove-cart'>x</button></div>`;
+      `<div><button id='${dish.id}' class='bt-remove-cart'>x</button></div></div>`;
     cartContainer.innerHTML = cartItemHtml;
     subTotalDiv.textContent = `₹${subTotal}`;
     deliveryFeeDiv.textContent = `₹${deliveryFee}`;

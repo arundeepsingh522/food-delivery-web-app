@@ -5,26 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="../styles/styleHome2.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
-    <div class="orders-main-div">
-      <div class="first">
-        <header>
-          <nav>
-            <ul>
-              <li><a href="home2.html">Home</a></li>
-              <li>
-                <a  href="orders.html">Orders</a>
-              </li>
-              <li><a href="about2.html">About</a></li>
-              <li><a style="font-size: larger"href="contact-us2.html">Contact Us</a></li>
-              <li><a href="cart.html">Cart</a></li>
+    <div id="about-div">
+    <header class="header">
+        <nav class="nav">
+            <ul class="ul">
+                <li><a  href="home2.html">Home</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <li><a  href="about2.html">About</a></li>
+                    <li><a  style="font-size: larger;"href="contact-us2.html">Contact Us</a></li>
+                    <li><a href="cart.html">Cart</a></li>
             </ul>
-          </nav>
-        </header>
-      </div>
+        </nav>
+        <div class="logout" id="bt-logout"><button>Logout</button></div>
+    </header>
+   
       <div class="secondd">
-        
         <div class="bg-image">
             <h3>We Would Love To Hear From You!</h3>
             
@@ -53,6 +51,7 @@
     </div>
     <script src="../../backend/user-management.js"></script>
     <script src="../scripts/utils.js"></script>
+    <script src="../scripts/logout.js"></script>
     <script src="../scripts/dishes-json.js"></script>
     <script src="../scripts/restaurants.js"></script>
     <script src="../scripts/order.js"></script>

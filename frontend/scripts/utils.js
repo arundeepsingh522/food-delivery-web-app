@@ -34,8 +34,6 @@ function isValidEmail(email) {
 
 function navigateToPage(page) {
   // Add a fade-out effect to the body
-  
-  
   // After a short delay, navigate to the second page
   setTimeout(function() {
     document.body.style.transition = "opacity 0.5s ease";
@@ -102,11 +100,38 @@ function showCustomizedAlertCart(id,restaurantId)
       false;
 
     }
+});}
+
+function showCustomizedAlertLogout(id,restaurantId)
+{
+  Swal.fire({
+    title: "Logout Confirmation",
+    text: "Are you sure you want to log out?",
+    icon: "warning",
+    showCancelButton: true,
+    cancelButtonText: "Cancel",
+    confirmButtonColor: '#008B8B',
+    confirmButtonText: "Logout",
+    customClass: {
+        cancelButtonText: 'custom-swal-cancel', // Apply custom class to the cancel button
+        confirmButtonText: 'custom-swal-confirm',
+        title: 'title-swal',
+        text: 'text-swal'
+    } 
+}).then((result) => {
+    if (result.isConfirmed) {
+        // Reset the cart and add the new item
+        localStorage.setItem('user',null);
+        
+        navigateToPage('home.html');
+
+        
+        
+    }else{  
+
+    }
 });
-
 }
-
-
 function formatDate(date) {
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const month = months[date.getMonth()];

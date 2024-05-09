@@ -11,9 +11,9 @@
 
 <body>
     <div class="main-cart">
-        <header class="header.cart">
-            <nav>
-                <ul>
+        <header class="header.cart header">
+            <nav class="nav">
+                <ul class="ul">
                     <li><a href="home2.html">Home</a></li>
                     <li><a href="orders.html">Orders</a></li>
                     <li><a href="about2.html">About</a></li>
@@ -21,6 +21,8 @@
                     <li><a style="font-size: larger;" href="cart.html">Cart</a></li>
                 </ul>
             </nav>
+            <div class="logout" id="bt-logout"><button>Logout</button></div>
+
         </header>
         <div class="content-cart" id="content-cart">
             <div class="item-cart-heading">
@@ -32,6 +34,7 @@
                 <h3>Remove</h3>
             </div>
             <div class="cart-container" id='cart-container'>
+
 
 
 
@@ -52,7 +55,6 @@
                 <div class="cart-total">
                     <h3>Cart Totals</h3>
                     <div>
-
                         <div class="cart-total-details">
                             <p>Subtotal</p>
                             <p id="subtotal-value">0</p>
@@ -77,19 +79,13 @@
         </footer>
 
     </div>
-
-
-
-
-
     </div>
-
-
-
     <div id="toastMessage" class="toastMessage"></div>
+    
 
     <script src="../../backend/user-management.js"></script>
     <script src="../scripts/utils.js"></script>
+    <script src="../scripts/logout.js"></script>
     <script src="../scripts/dishes-json.js"></script>
     <script src="../scripts/restaurants.js"></script>
     <script src="../scripts/cart.js"></script>

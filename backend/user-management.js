@@ -151,7 +151,7 @@ function getCartDishes() {
   }
 }
 
- function addToCart(id, restaurantId) {
+function addToCart(id, restaurantId) {
   const users = getUsers();
   const currentUserEmail = getCurrentUserEmail();
   console.log("current email", currentUserEmail);
@@ -176,13 +176,11 @@ function getCartDishes() {
           restaurantId = parseInt(restaurantId) + 1;
           console.log("resIdddddddddddddd", resId, existingResId);
           if (existingResId != resId) {
-           
+            try {
+              const result = showCustomizedAlertCart(id, restaurantId);
+              return false;
 
-           try {
-            const result =  showCustomizedAlertCart(id,restaurantId);
-            return false;
-         
-          /*  if (result==true) {
+              /*  if (result==true) {
               console.log('resukt isssssss',result);
                 cartArr.push(id);
                 console.log("Dish added to cart");
@@ -191,9 +189,9 @@ function getCartDishes() {
                 console.log("User canceled the action");
                 return false;
             }*/
-        } catch (error) {
-            console.error("Error showing alert:", error);
-        }
+            } catch (error) {
+              console.error("Error showing alert:", error);
+            }
             // return 'custom-alert';
           } else {
             console.log("in elseeeeeeeeeeeeeeeeeeeeeeeeeeee");
@@ -286,7 +284,6 @@ function createAndStoreOrder(items, deliveryFee) {
   const orderId = generateOrderId();
   const currentDate = new Date();
   const formattedDate = formatDate(currentDate);
-
   const order = {
     id: orderId,
     date: formattedDate,
@@ -309,7 +306,6 @@ function createAndStoreOrder(items, deliveryFee) {
 
 function getCurrenUserOrders() {
   const users = getUsers();
-
   const currentUserEmail = getCurrentUserEmail();
   const orders = users.find((user) => user.email === currentUserEmail).orders;
   if (orders) {
