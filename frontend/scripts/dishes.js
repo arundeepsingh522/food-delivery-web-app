@@ -6,6 +6,7 @@ let dishesHtml = "";
 const dishesContainer = document.getElementById("dishes-div");
 const cart = getCart() || [];
 console.log("new cart", cart);
+let button;
 // Function to update the button text based on cart state
 
 if (dishes) {
@@ -112,14 +113,24 @@ document.addEventListener("click", (event) => {
       //use here perform add to cart
 
       if (result==true) {
+        cart.push(dishId);
+        
         updateButton(true, dishId);
-        updateDishes(null);
+       // updateDishes(null);
       }
     } else {
       console.log("inside remove event");
-      removeFromCart(dishId);
+      const result =removeFromCart(dishId);
+      if(result)
+        {
+          cart.splice(cart.indexOf(dishId), 1);
+          updateButton(false, dishId);
+          updateDishes(null);
+         
+        }
+
       updateButton(false, dishId);
-      updateDishes(null)
+      //updateDishes(null)
     }
   
 
@@ -138,7 +149,7 @@ document.addEventListener("click", (event) => {
 });
 function updateButton(flag, dishId) {
   console.log("type of ", typeof dishId);
-  const button = document.getElementById(dishId);
+   button = document.getElementById(dishId);
   console.log("inside update did", dishId);
   console.log("flag===", flag);
 
@@ -173,18 +184,22 @@ document.addEventListener("DOMContentLoaded", function () {
   updateDishes(null);
 });
 function updateDishes(filteredDishes) {
+
+  console.log('inside the update Dishessssssssssssssssssssssssssssssss');
   let dishesArray;
 
   if (filteredDishes) {
 
     console.log('inside filtered dishes');
     dishesArray = filteredDishes;
+    console.log('dishes array',dishesArray);
   } else {
     console.log('outside filtered dishes');
     dishesArray = dishes;
   }
   console.log("inside update dishesssssssssssssssssssssssssssss");
   dishesArray.forEach((dish) => {
+    console.log('cart is ',cart);
     if (cart.some((item) => item == dish.id)) {
       console.log("inside", dish.id);
       updateButton(true, dish.id);

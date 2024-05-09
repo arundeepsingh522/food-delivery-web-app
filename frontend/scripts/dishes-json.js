@@ -370,8 +370,7 @@ price:100,
 {
   id:73,
 name:"Samosa",
-picSrc:
-"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5DOCH9hp0OPvnpl8Lw3liZ2xRTExQ2FXyPcX",
+picSrc:"../images/bg-samosa.png",
 description: "",
 ratingReviews:"3.9(40)",
 price:35,
