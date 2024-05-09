@@ -12,7 +12,6 @@ const contentCartContainer = document.getElementById("content-cart");
 if (cart.length > 0) {
   const dishes = getDishes(cart);
   console.log("fetched dishes", dishes);
-
   let cartItemHtml = cartContainer.innerHTML;
   dishes.forEach((dish) => {
     subTotal += dish.price;
@@ -20,7 +19,7 @@ if (cart.length > 0) {
     cartItemHtml +=
       "<div class='item-cart'>" +
       `<img class='img-cart-dish' src='${dish.picSrc}'>` +
-      `<h3>${dish.name}<h3>` + // Placeholder for dish title
+      `<h3>${dish.name}</h3>` + // Placeholder for dish title
       `<h3>₹${dish.price}</h3>` +
       `<h3>1</h3>` + // Assuming fixed quantity for now
       `<h3>₹${dish.price}</h3>` + // Assuming total price for one item

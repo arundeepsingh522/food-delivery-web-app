@@ -341,11 +341,9 @@ td{
 }
 
 .cart-container{
-    
     margin-top: 10px;
     margin-left: 100px;
-    margin-right: 100px;
-    
+    margin-right: 100px; 
 }
 
 .item-cart-heading{
@@ -362,10 +360,18 @@ td{
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 50px;
+    background-color: #0eb157;
 }
 .item-cart-heading h3{
     text-align: center;
+    width: calc(16.666% - 10px); /* Set width of each item (adjust as needed) */
+    background-color: #f0f0f0; /* Just for demonstration */
+    padding: 10px; /* Add padding for spacing */
+    box-sizing: border-box;
+
 }
+
+
 .item-cart{
    
     display: flex;
@@ -373,10 +379,22 @@ td{
     justify-content: space-between;
     align-items: center;
     margin: 20px;
+    margin-right: 1px;
+    
 }
-.item-cart h3
+
+.item-cart h3,.item-cart img,.item-cart button
 {
     text-align: center;
+    width: calc(16.666% - 10px); /* Set width of each item (adjust as needed) */
+    /* Just for demonstration */
+    padding: 10px; /* Add padding for spacing */
+    box-sizing: border-box;
+    
+
+}
+.item-cart img{
+    height: 120px;
 }
 
 .toastMessage {
@@ -396,7 +414,6 @@ td{
 
   .main-cart
   {
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;

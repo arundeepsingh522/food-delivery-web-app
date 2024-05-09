@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="../styles/styleHome2.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
     <div class="main-cart">
         <header class="header.cart">
             <nav>
                 <ul>
-                    <li><a  href="home2.html">Home</a></li>
+                    <li><a href="home2.html">Home</a></li>
                     <li><a href="orders.html">Orders</a></li>
                     <li><a href="about2.html">About</a></li>
                     <li><a href="contact-us2.html">Contact Us</a></li>
@@ -23,17 +25,17 @@
         <div class="content-cart" id="content-cart">
             <div class="item-cart-heading">
                 <h3>Items</h3>
-                        <h3>Title</h3>
-                        <h3>Price</h3>
-                        <h3>Quantity</h3>
-                        <h3>Total</h3>
-                        <h3>Remove</h3>
+                <h3>Title</h3>
+                <h3>Price</h3>
+                <h3>Quantity</h3>
+                <h3>Total</h3>
+                <h3>Remove</h3>
             </div>
-            <div  class="cart-container" id='cart-container'>
-                
-                
-                    
-                        <!--<tr class="item-cart" >
+            <div class="cart-container" id='cart-container'>
+
+
+
+                <!--<tr class="item-cart" >
                             <td><img class="img-cart-dish" src="../images/Sweets.jpg"></td>
                             
                             <td>Mix Prantha</td>
@@ -43,53 +45,54 @@
                             <td>₹60</td>
                             <td><button id="dishid" class="bt-remove-cart">x</button></td>
                         </tr> -->
-        
-                        
-            </div>        
-                <div class="cart-bottom">
-                    <div class="cart-total">
-        <h3>Cart Totals</h3>
-        <div>
-           
-            <div class="cart-total-details">
-                <p>Subtotal</p>
-                <p id="subtotal-value">0</p>
+
+
             </div>
-            <div class="cart-total-details">
-                <p>Delivery Fee</p>
-                <p id="delivery-value">0</p>
-            </div>
-            <div class="cart-total-details">
-                <p>Total</p>
-                <p id="total-value">0</p>
+            <div class="cart-bottom">
+                <div class="cart-total">
+                    <h3>Cart Totals</h3>
+                    <div>
+
+                        <div class="cart-total-details">
+                            <p>Subtotal</p>
+                            <p id="subtotal-value">0</p>
+                        </div>
+                        <div class="cart-total-details">
+                            <p>Delivery Fee</p>
+                            <p id="delivery-value">0</p>
+                        </div>
+                        <div class="cart-total-details">
+                            <p>Total</p>
+                            <p id="total-value">0</p>
+                        </div>
+                    </div>
+                    <button id="bt-checkout">PROCEED TO CHECKOUT</button>
+                </div>
+
             </div>
         </div>
-        <button id="bt-checkout">PROCEED TO CHECKOUT</button>
-                    </div>
-                    
-                 </div>   
-            </div>
-            <footer class="header-cart">
-                <p>&copy; 2024 Food Delivery Web App</p>
-                <p>All rights reserved.</p>
-            </footer>
+        <footer class="header-cart">
+            <p>&copy; 2024 Food Delivery Web App</p>
+            <p>All rights reserved.</p>
+        </footer>
 
     </div>
-    
 
-    
-    
+
+
+
 
     </div>
-    
-    
-    
+
+
+
     <div id="toastMessage" class="toastMessage"></div>
-    
+
     <script src="../../backend/user-management.js"></script>
     <script src="../scripts/utils.js"></script>
     <script src="../scripts/dishes-json.js"></script>
     <script src="../scripts/restaurants.js"></script>
     <script src="../scripts/cart.js"></script>
 </body>
+
 </html>

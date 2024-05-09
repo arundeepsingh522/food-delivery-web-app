@@ -35,6 +35,10 @@ form {
   margin-bottom: 5px;
   margin-right: 20px;
 }
+.login{
+  width: 380px;
+
+}
 
 label {
   color: #000000;
@@ -614,4 +618,10 @@ color: #f0f0f0;
 background-position: center;
 background-repeat: no-repeat;
 }
+
+.content-cart h3{
+
+  background-color: #0eb157;
+}
+
 
