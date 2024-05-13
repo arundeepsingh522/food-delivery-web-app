@@ -314,3 +314,14 @@ function getCurrenUserOrders() {
     return null;
   }
 }
+
+function storeFeedBack(feedback)
+{
+  const feedbackArray = JSON.parse(localStorage.getItem('feedbacks'))||[];
+  console.log('feed array',feedbackArray);
+
+  feedbackArray.push(feedback);
+
+  localStorage.setItem('feedbacks',JSON.stringify(feedbackArray));
+  return true
+}

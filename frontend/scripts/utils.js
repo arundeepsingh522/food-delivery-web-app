@@ -144,3 +144,11 @@ function formatDate(date) {
   
   return `${month} ${day}, ${formattedHours}:${formattedMinutes} ${amPM}`;
 }
+
+function isValidMobileNumber(mobileNumber) {
+  // Regular expression to match a valid mobile number
+  var mobileNumberRegex = /^[0-9]{10,15}$/;
+
+  // Test if the mobile number matches the regex
+  return mobileNumberRegex.test(mobileNumber);
+}
