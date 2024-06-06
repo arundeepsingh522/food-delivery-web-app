@@ -22,7 +22,6 @@ function isValidEmail(email) {
     var toast = document.getElementById("toastMessage");
     toast.innerText = message; // Set the message text
     toast.style.display = "block";
-
     return new Promise(resolve => {
       setTimeout(function(){
           toast.style.display = "none";
